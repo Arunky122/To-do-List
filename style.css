@@ -66,10 +66,12 @@ form input, form button{
 
 }
 form input{
-    width:90%
+    width:90%;
+    border-radius: 5px 0px 0px 5px;
 }
 form button{
     width: 40px;
+    border-radius: 0px 5px 5px 0px;
 }
 
 
@@ -103,6 +105,7 @@ form button:hover{
 }
 .todo{
     position: relative;
+    border-radius: 5px ;
     margin: 0.5rem;
     background:white;
     color: black;
@@ -112,6 +115,7 @@ form button:hover{
     /* flex-wrap: wrap; */
     justify-content: space-between;
     align-items: center;
+    transition: all 0.5s ease;
 }
 .todo li{
     display: flex;
@@ -131,13 +135,16 @@ form button:hover{
     background-color: #ff6f47;
     color: white;
     border: none;
-    padding: 1rem;
+    padding: 0.8rem;
     cursor: pointer;
     /* height: 100%; */
     transition: all 0.3s ease;
     /* right: 40px; */
     
     
+}
+.delete-btn{
+    border-radius: 0px 5px 5px 0px;
 }
 
 .complete-btn{
@@ -154,6 +161,15 @@ form button:hover{
     pointer-events: none;
 }
 
+.completed{
+    text-decoration: line-through;
+    opacity: 0.5;
+}
+
+.fall{
+    transform: translateY(8rem) rotateZ(20deg);
+    opacity: 0;
+}
 @media screen and (max-width:600px)
 {
    .main-container{
@@ -164,6 +180,9 @@ form button:hover{
    }
    .todo{
        font-size: 0.9rem;
+   }
+   .todo li{
+       padding: 5px 10px;
    }
   
 }
