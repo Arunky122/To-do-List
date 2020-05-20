@@ -103,7 +103,7 @@ function deleteCheck(e){
 // For filterList 
 
 function filterList(e){
-    e.preventDefault();
+    // e.preventDefault();
 
     const todos = todoList.childNodes;
     // console.log(todos);
