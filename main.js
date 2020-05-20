@@ -2,6 +2,8 @@
 var todoInput = document.querySelector('.list-input');
 var todoBtn = document.querySelector('#subBtn')
 var todoList = document.querySelector('.list-items');
+var filterOption = document.querySelector('.filter-todo');
+// console.log("list",todoList)
 
 
 
@@ -10,24 +12,46 @@ var todoList = document.querySelector('.list-items');
 //Event Listeners
 todoBtn.addEventListener('click', addList);
 todoList.addEventListener('click',deleteCheck);
+filterOption.addEventListener('click', filterList);
+
 
 
 
 
 //function
+
 function addList(e){
     e.preventDefault();
+    
+    
+    
+    // function errorMsg(){
+    //     if(todoList.innerHTML==""){
+    //         alert("Please type your to do !");
+    //     }
+    // }
+    
+    // errorMsg();
+    
+
+    
 
     //create div in ul
     const todoDiv = document.createElement('div');
     todoDiv.classList.add('todo');
+    // todoDiv.classList.add('animate');
+    todoList.appendChild(todoDiv);
+    
 
     // Create list in the div
 
     const todoItem = document.createElement('li');
     todoItem.classList.add('item');
     todoItem.innerHTML= todoInput.value;
+    // todoDiv.appendChild(todoItem);
     todoDiv.appendChild(todoItem);
+
+    
 
 
     // create completed button 
@@ -75,3 +99,43 @@ function deleteCheck(e){
     }
 
 }
+
+// For filterList 
+
+function filterList(e){
+    e.preventDefault();
+
+    const todos = todoList.childNodes;
+    // console.log(todos);
+    // console.log(todos);
+    todos.forEach(function(todo){
+        switch(e.target.value){
+            case "all":
+                // console.log("okay done !")
+                todo.style.display = "flex";
+                break;
+            case "completed":
+                if(todo.classList.contains("completed")){
+                    todo.style.display= "flex";
+
+                }else{
+                    todo.style.display = "none";
+                }
+                break;
+            case "incomplete":
+                if(!todo.classList.contains("completed")){
+                    todo.style.display= "flex";
+
+                }else{
+                    todo.style.display = "none";
+                }
+                break ;  
+
+
+        }
+    });
+
+
+
+}
+
