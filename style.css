@@ -195,7 +195,7 @@ select{
 @media screen and (max-width:600px)
 {
    .main-container{
-       width: 95%;
+       width: 100%;
    }
    form input, form button{
        font-size: 0.9rem;
@@ -208,7 +208,7 @@ select{
    }
   
 }
-@media screen and (max-width:900px)
+@media screen and (min-width:900px)
 {
     .main-container{
         width: 60%;
@@ -225,7 +225,7 @@ select{
     
 }
 
-@media screen and (max-width:1300px)
+@media screen and (min-width:1300px)
 {
     .main-container{
         width: 50%;
